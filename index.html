@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>PSG Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="psg-text">PSG</span>
+                    <span class="chatbot-text">Chatbot</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-page="chat">
+                        <i class="fas fa-comments"></i>
+                        <span>Chat</span>
+                    </li>
+                    <li data-page="history">
+                        <i class="fas fa-history"></i>
+                        <span>History</span>
+                    </li>
+                    <li data-page="learning">
+                        <i class="fas fa-brain"></i>
+                        <span>Learning</span>
+                    </li>
+                    <li data-page="about">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <!-- Chat Page -->
+            <div class="page active" id="chat-page">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-comments"></i>
+                        <h2>PSG Assistant</h2>
+                    </div>
+                    <div class="chat-subtitle">Your AI companion for PSG information</div>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot animate-in">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">Welcome to PSG Chatbot! How can I help you today?</div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="typing-text">PSG Assistant is typing...</span>
+                    </div>
+                    
+                    <div class="suggestions-container" id="suggestions-container" style="display: none;">
+                        <div class="suggestions-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Click on any question to get an answer:</span>
+                        </div>
+                        <div class="suggestions-grid" id="suggestions-grid"></div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <div class="input-wrapper">
+                            <input type="text" id="user-input" placeholder="Ask me about PSG...">
+                            <button id="send-button">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Page -->
+            <div class="page" id="history-page">
+                <div class="page-header">
+                    <h2><i class="fas fa-history"></i> Conversation History</h2>
+                </div>
+                <div id="history-container"></div>
+            </div>
+
+            <!-- Learning Page -->
+            <div class="page" id="learning-page">
+                <div class="page-header">
+                    <h2><i class="fas fa-brain"></i> Learning Data</h2>
+                </div>
+                <div class="learning-content">
+                    <div class="learning-hero">
+                        <div class="learning-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Questions I'm Learning From</h3>
+                        <p>These are questions I couldn't answer confidently. I'm learning from them to improve!</p>
+                    </div>
+                    <div id="learning-container"></div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div class="page" id="about-page">
+                <div class="page-header">
+                    <h2><i class="fas fa-info-circle"></i> About PSG Chatbot</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-hero">
+                        <div class="hero-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered PSG Assistant</h3>
+                        <p>Your intelligent companion for all things PSG</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4>Natural Language Processing</h4>
+                            <p>Advanced NLP techniques for understanding your questions</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Machine Learning</h4>
+                            <p>Logistic Regression algorithm for accurate responses</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Rich Dataset</h4>
+                            <p>Comprehensive PSG knowledge base</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-details">
+                        <h3>Project Overview:</h3>
+                        <p>The goal of this project is to create a chatbot that can understand and respond to user input based on intents. The chatbot is built using Natural Language Processing (NLP) library and Logistic Regression, to extract the intents and entities from user input.</p>
+                        
+                        <h3>Dataset:</h3>
+                        <p>The dataset used in this project is a collection of labelled intents and entities. The data is stored in a list.</p>
+                        <ul>
+                            <li>Intents: The intent of the user input (e.g. "greeting", "budget", "about")</li>
+                            <li>Entities: The entities extracted from user input</li>
+                            <li>Text: The user input text</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html> 
